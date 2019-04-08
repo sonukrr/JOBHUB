@@ -20,3 +20,8 @@ flex:  1 1 auto;
 }
 }
 .material-icons.md-48 { font-size: 35px; }
+.header{
+    position: sticky;
+    top:0px;
+    z-index:8;
+}

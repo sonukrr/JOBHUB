@@ -8,7 +8,7 @@ import { ThumbnailComponent } from './components/thumbnail/thumbnail.component';
 import { BookmarkComponent } from './components/bookmark/bookmark.component';
 import { HttpClientModule, HTTP_INTERCEPTORS, HttpRequest } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatCardModule, MatButtonModule, MatSnackBarModule, MatFormFieldModule, MatInputModule, MatAutocompleteModule, MatPaginatorModule, MatDividerModule, MatProgressSpinnerModule } from '@angular/material';
+import { MatCardModule, MatButtonModule, MatSnackBarModule, MatFormFieldModule, MatInputModule, MatAutocompleteModule, MatPaginatorModule, MatDividerModule, MatProgressSpinnerModule, MatProgressBarModule } from '@angular/material';
 import { InterceptorService } from './services/interceptor.service';
 import { JobdialogComponent } from './components/jobdialog/jobdialog.component';
 import { ViewjobComponent } from './components/viewjob/viewjob.component';
@@ -38,7 +38,8 @@ import { ViewjobComponent } from './components/viewjob/viewjob.component';
     ReactiveFormsModule,
     MatPaginatorModule,
     MatDividerModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatProgressBarModule
 
   ],
   providers:[

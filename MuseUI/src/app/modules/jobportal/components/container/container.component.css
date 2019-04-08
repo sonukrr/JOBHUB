@@ -15,3 +15,8 @@
 .mat-divider{
     padding-bottom:10px;
 }
+.progress-bar{
+    position: fixed;
+    z-index: 5;
+    margin:0px;
+}

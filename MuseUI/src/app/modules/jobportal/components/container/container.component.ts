@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
 import { Job } from '../../models/job';
 import { JobService } from '../../services/job.service';
 import { MatSnackBar, PageEvent } from '@angular/material';
@@ -25,8 +25,11 @@ export class ContainerComponent implements OnInit {
 
   job: Job;
 
+  progresValue:number;
+
   constructor(private jobService: JobService, private snackBar: MatSnackBar) {
     this.job = new Job();
+    this.progresValue =0;
   }
 
   ngOnInit() {
@@ -82,5 +85,17 @@ export class ContainerComponent implements OnInit {
 
     this.pageNumber.emit(this.pageEvent.pageIndex);
   }
+
+  //for progress bar 
+@HostListener("window:scroll", [])
+onWindowScroll() {
+ var element = document.documentElement, 
+ body = document.body,
+ scrollTop = 'scrollTop',
+ scrollHeight = 'scrollHeight';
+ this.progresValue = 
+ (element[scrollTop]||body[scrollTop]) / 
+ ((element[scrollHeight]||body[scrollHeight]) - element.clientHeight) * 100;
+}
 
 }
