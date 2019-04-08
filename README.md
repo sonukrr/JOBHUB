@@ -1,4 +1,4 @@
-# Please refer to BRD/SRS .doc file above for brief description of project.It also have screenshots of this application for better understanding.  
+## Please refer to JOBHUB WEB APPLICATION.docx file above for brief description of project.It also have screenshots of this application for better understanding.  
 # TheMuse - A Job Portal
 ## Problem Statement
 Build a system to manage jobs.
