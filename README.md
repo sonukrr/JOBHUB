@@ -74,3 +74,5 @@ user.
 	3. To run app, go to chrome and hit:-
 		
 		URL----> localhost:4200
+		
+
