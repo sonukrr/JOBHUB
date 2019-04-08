@@ -89,6 +89,7 @@ public class JobRepositoryTest {
 		repo.save(new Job(0, "3333", "web developer", "26/3/2019", "Gurgaon", "ANR software solutions pvt ltd", "pending", "sonukrr"));
 
 		List<Job> movieList = repo.findByUserId("sonukrr");
+		System.out.println("-------------->"+movieList);
 		assertEquals(movieList.get(0).getName(), "full stack developer");
 		assertEquals(movieList.get(1).getName(), "java developer");
 		assertEquals(movieList.get(2).getName(), "web developer");

@@ -6,3 +6,6 @@ body {
     padding:0px;
     background:rgb(201, 198, 198);
 }
+.mat-progress-spinner circle, .mat-spinner circle {
+    stroke: darkslategrey;
+}

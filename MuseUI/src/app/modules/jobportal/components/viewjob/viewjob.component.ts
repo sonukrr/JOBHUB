@@ -76,4 +76,10 @@ this.job = new Job();
   //     });
   //   });
   // }
+
+  loadData(){
+    if(this.res == null)
+      return true;
+    else return false;
+  }
 }

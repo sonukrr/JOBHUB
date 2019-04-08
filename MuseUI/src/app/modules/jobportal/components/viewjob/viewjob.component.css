@@ -22,3 +22,8 @@
 .movie-actions{
 text-align: right;
 }
+
+.spinner{
+    margin: auto;
+    margin-top: 15%;   
+}
