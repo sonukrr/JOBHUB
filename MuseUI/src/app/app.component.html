@@ -1,0 +1,38 @@
+<div class= "header">
+<mat-toolbar color="primary">
+    <span>
+        <i class="material-icons md-48">touch_app</i>JOBBUZ
+    </span> 
+     <span>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+        <button mat-button [routerLink]="['/jobs/homepage']">
+        <mat-icon aria-hidden="false" class="homebtn" aria-label="Example home icon">home</mat-icon><span>Home</span>
+        </button>
+
+        <button id="bkButton" class="bookmarkbtn" mat-button *ngIf="checkLoggedIn()" [routerLink]="['/jobs/bookmark']">
+        <i class="material-icons ">
+            bookmarks
+        </i>&nbsp;<span>My Bookmarks</span>
+        </button>
+
+        <button mat-button class="search-button" *ngIf="checkLoggedIn()" [routerLink]="['/jobs/search']">
+        <i class="material-icons">search</i>
+        &nbsp;<span>Search</span>
+        </button>
+<span class="fill-space"> </span>
+        <button mat-button class="user-button" *ngIf="checkLoggedIn()">
+            <i class="material-icons">account_circle</i>
+            &nbsp;<span>{{userId}}</span>
+            </button>
+
+        <button class="logout-btn" mat-button *ngIf="checkLoggedIn()" (click)="logOut()">
+        <i class="material-icons">power_settings_new</i>
+       <span> Logout </span>
+        </button>
+
+</mat-toolbar>
+</div>
+<br>
+
+<router-outlet></router-outlet>

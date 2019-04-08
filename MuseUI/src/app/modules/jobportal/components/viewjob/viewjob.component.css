@@ -1,0 +1,24 @@
+.movie-thumbnail{
+ 
+    margin:0px 10px;
+    border:1px solid blueviolet;
+    
+}
+
+.movie-overview{
+ 
+    overflow-x: hidden;
+    overflow-y:auto;
+
+}
+
+.movie-title{
+    
+   height: 49px;
+    overflow: hidden;
+   
+}
+
+.movie-actions{
+text-align: right;
+}

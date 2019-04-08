@@ -1,0 +1,17 @@
+
+<div class="search">
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput type="text" id="search-button-input" placeholder="Search by category" #box (keyup.enter)="onEnter(box.value)" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+    <mat-hint align="end">Select from the options available as dropdown</mat-hint>
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+</div>
+
+<app-container [jobsList]="jobsList" (pageNumber)="updatePageNumber($event)" >
+</app-container> 

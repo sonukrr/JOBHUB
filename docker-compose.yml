@@ -1,0 +1,44 @@
+version: '3.2'
+services:
+  user-app:
+   image: user-app
+   build: accountmanager/
+   restart: always
+   network_mode: host
+   ports:
+     - 8001:8001
+   expose:
+     - 8001
+   depends_on:
+     - job-mysql
+  job-app:
+   image: job-app
+   build: musemanager/
+   restart: always
+   network_mode: host
+   ports:
+     - 8000:8000
+   expose:
+     - 8000
+   depends_on:
+     - job-mysql
+
+  job-mysql:
+   image: mysql:5.5
+   network_mode: host
+   ports:
+     - "3306:3306"
+   environment:
+     MYSQL_ROOT_PASSWORD: root
+     MYSQL_DATABASE: musedb
+     MYSQL_USER: app_root
+     MYSQL_PASSWORD: root123
+   volumes:
+     - /opt/job/mysqldb:/var/lib/mysql
+  angular:
+    image: angular-app
+    build: MuseUI
+    network_mode: host
+    container_name: angular-docker
+    ports:
+      - 4200:4200

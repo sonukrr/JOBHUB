@@ -1,0 +1,50 @@
+.login-block{
+    margin: auto;
+    width: 30%;
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+    align-items: center;
+    background: #dedfcc;
+    margin-top: 10%;
+    height: 350px;
+    border-radius: 5%;
+    opacity:0.9;
+}
+
+.register-input-full-width{
+    width: 300px;
+}
+
+h3{
+    text-align: center;
+}
+.login-user{
+    margin: 20px;
+}
+
+.bg {
+    background-image: url("https://i0.wp.com/fish4jobsb2c.wpengine.com/wp-content/uploads/2017/06/Job-Hunting.jpg?fit=1024%2C512&ssl=1");
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: 60px;
+    background-size: cover;
+background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 1024px){
+    .bg {
+    left: 50%;
+    margin-left: -512px; }
+}
+
+.error{
+    color:orangered;
+}

@@ -1,0 +1,28 @@
+
+<mat-card class="movie-thumbnail" >
+    <div class="jobcontent" (click)="viewDetails()">
+    <mat-card-header class="movie-header">
+      <mat-card-title class="movieTitle">{{res?.company.name}}</mat-card-title>
+      <mat-card-subtitle class="movie-subtitle">{{res?.locations[0].name}}</mat-card-subtitle>
+    </mat-card-header>
+    <!-- <img mat-card-image class="movie-image" src="https://image.flaticon.com/icons/png/512/52/52782.png" [alt]="movie?.title"> -->
+    <mat-card-content>
+      
+     
+      <h5>Company Description:<div [innerHtml]="res?.contents"> </div></h5>
+ 
+      <h5>JobId: {{res?.id}}</h5>
+      <h5>JobName: {{res?.name}}</h5>
+      <h5>Job publication date: {{res?.publication_date}}</h5>
+     <div > <h5>Status:{{job?.status}} </h5></div>
+     
+    </mat-card-content>
+    </div>
+    <mat-card-actions class="movie-actions">
+        <!-- {{inBookmarks}}
+      <button *ngIf="!inBookmarks" class="addButton" mat-raised-button color="primary" (click)="addToBookmark()">Add to Bookmark</button>
+      <button *ngIf="inBookmarks" mat-raised-button color="primary" mat-button (click)="deleteFromBookmark()">Delete</button>
+      <button *ngIf="inBookmarks " mat-raised-button color="primary" mat-button (click)="updateJobStatus('update')" align="end">Update</button>
+   -->
+    </mat-card-actions>
+  </mat-card>

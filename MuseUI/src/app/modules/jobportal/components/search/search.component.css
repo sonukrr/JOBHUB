@@ -1,0 +1,16 @@
+.search{
+    margin-left:30%;
+
+    width:50%;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+

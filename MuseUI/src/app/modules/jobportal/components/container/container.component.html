@@ -1,0 +1,14 @@
+
+<mat-paginator *ngIf="!inBookmarks" [length]=100
+[pageSize]=20
+
+(page)="pageEvent = $event" (click)="updatePage()">
+</mat-paginator>
+<mat-divider></mat-divider>
+<div class="job-container">
+  <app-thumbnail *ngFor="let job of jobsList" [job]="job" (addJob)="addToBookmark($event)"
+    (deleteJob)="deleteFromBookmark($event)" (updateJob)="updateJob($event)" [inBookmarks]="inBookmarks">
+
+  </app-thumbnail>
+
+</div>

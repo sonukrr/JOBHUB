@@ -1,0 +1,13 @@
+<span>Update the status for the job :{{data.obj.name}}</span>
+<h4 mat-dialog-title>{{data.obj.name}}</h4>
+
+<div mat-dialog-content>
+  <p>Status: </p>
+  <mat-form-field>
+    <textarea matInput [(ngModel)]="status"></textarea>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button color="warn" (click)="onNoClick()">Cancel</button>
+  <button mat-button color="warn" (click)="updateJob()">Update</button>
+</div>

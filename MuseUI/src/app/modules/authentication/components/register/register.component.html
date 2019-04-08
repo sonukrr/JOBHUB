@@ -1,0 +1,36 @@
+<div class="bg">
+<form class="register-form" #registerForm="ngForm" (ngSubmit)="registerUser()" [style.fontsize.px]="20">
+  <div class="register-block">
+    <div class="row">
+      <h3>Register User</h3>
+    </div>
+<div *ngIf="invalid" class="error">User ID already exists</div>
+    <div class="row">
+      <mat-form-field class="register-input-full-width">
+        <input id="firstName" class="firstName" matInput placeholder="First Name" [(ngModel)]="newUser.firstName" name="firstName">
+      </mat-form-field>
+
+      <mat-form-field class="register-input-full-width">
+        <input id="lastName" class="lastName" matInput placeholder="Last Name" [(ngModel)]="newUser.lastName" name="lastName">
+      </mat-form-field>
+
+
+      <mat-form-field class="register-input-full-width">
+        <input id="userId" class="userId" matInput placeholder="User ID" [(ngModel)]="newUser.userId" name="userId" #userId="ngModel" required min="5"
+          max="15">
+        <mat-error *ngIf="userId.invalid">User Id: Must be between 5 to 15 characters</mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field class="register-input-full-width">
+        <input id="password" class="password" type="password" matInput placeholder="Set Password" [(ngModel)]="newUser.password" name="password">
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <button class="register-user" mat-raised-button color="primary" type="submit" (click)="registerUser()">Register</button>
+      <button mat-raised-button color="primary" type="submit" (click)="resetInput()">Clear</button>
+    </div>
+  </div>
+</form>
+</div>

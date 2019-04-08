@@ -1,0 +1,32 @@
+
+<mat-card class="job-thumbnail" >
+  <div class="jobcontent" (click)="viewDetails()">
+
+  <mat-card-header class="job-header">
+    <mat-card-title class="jobTitle">{{job?.jobId}}</mat-card-title>
+    <mat-card-subtitle class="job-subtitle">{{job?.name}}</mat-card-subtitle>
+
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    
+    <h5><span class="title">JobId: </span>{{job?.jobId}}</h5>
+    <h5><span class="title">Company name: </span>{{job?.company}}</h5>
+    <h5><span class="title">Location: </span>{{job?.location}} </h5>
+   <div *ngIf="inBookmarks"> <h5>Status:{{job?.status}} </h5></div>
+   
+  </mat-card-content>
+  </div>
+  <mat-card-actions class="job-actions">
+    <button *ngIf="!inBookmarks" class="addButton" mat-raised-button color="primary" mat-button (click)="addToBookmark()"><i class="material-icons">
+      bookmark_border
+      </i>&nbsp;Add to Bookmark</button>
+    <button *ngIf="inBookmarks" class="deleteButton" mat-raised-button color="primary" mat-button (click)="deleteFromBookmark()"><i class="material-icons">
+      delete_outline
+      </i>&nbsp;Delete</button>
+    <button *ngIf="inBookmarks" class="updateButton" mat-raised-button color="primary" mat-button (click)="updateJobStatus('update')" align="end"><i class="material-icons">
+      update
+      </i>&nbsp;Update</button>
+
+  </mat-card-actions>
+</mat-card>

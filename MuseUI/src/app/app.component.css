@@ -1,0 +1,22 @@
+.mat-toolbar.mat-primary{
+    background: darkslategrey;
+
+}
+
+.fill-space{
+flex:  1 1 auto;
+    
+    
+     
+}
+@media screen and (max-width: 700px) {
+    .header button span{
+    display: none;
+        margin: 0px;
+        padding: 0px;
+}
+.user-button{
+    display:none;
+}
+}
+.material-icons.md-48 { font-size: 35px; }

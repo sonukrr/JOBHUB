@@ -1,0 +1,28 @@
+<div class="bg" >
+<form class="login-form" #registerForm="ngForm" (ngSubmit)="loginUser()" [style.fontsize.px]="20">
+  <div class="login-block">
+    <div class="row header">
+      <h3>User Login</h3>
+    </div>
+    <div *ngIf="invalid" class="error">Invalid login credentials</div>
+    <div class="row">
+      <mat-form-field class="register-input-full-width">
+        <input id="userIdL" class="inputId" matInput placeholder="User ID" [(ngModel)]="newUser.userId" name="userId" #userId="ngModel" required min="5"
+          max="15">
+        <mat-error *ngIf="userId.invalid">User Id: Must be between 5 to 15 characters</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field class="register-input-full-width">
+        <input type="password" id="passwordL" class="inputPass" matInput placeholder="Enter Password" [(ngModel)]="newUser.password" name="password">
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <button class="login-user" mat-raised-button color="primary" type="submit" (click)="loginUser()">Login</button>
+      <button class="register-button" mat-raised-button color="primary" type="submit" [routerLink]="['/register']">Register</button>
+    </div>
+  </div>
+</form>
+</div>
+

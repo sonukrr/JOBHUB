@@ -1,0 +1,1 @@
+The account manager is a microservice that is responsible for registering user by asking details and then login the user.The user can only login once he is authenticated.After successfull login a jwt token is generasted to let user access secured URL's.

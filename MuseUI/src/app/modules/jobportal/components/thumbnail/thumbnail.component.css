@@ -1,0 +1,57 @@
+.job-thumbnail{
+    -webkit-font-smoothing: antialiased;
+    width:250px;
+    margin:0px 10px;
+    border:1px solid darkslategrey;
+    background: #d8e0de; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #d8e0de 0%, #aebfbc 22%, #99afab 33%, #8ea6a2 50%, #829d98 66%, #4e5c5a 85%, #0e0e0e 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #d8e0de 0%,#aebfbc 22%,#99afab 33%,#8ea6a2 50%,#829d98 66%,#4e5c5a 85%,#0e0e0e 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #d8e0de 0%,#aebfbc 22%,#99afab 33%,#8ea6a2 50%,#829d98 66%,#4e5c5a 85%,#0e0e0e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d8e0de', endColorstr='#0e0e0e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */    
+}
+
+
+.job-overview{
+    height: 65px;
+    overflow-x: hidden;
+    overflow-y:auto;
+
+}
+
+
+
+.job-actions{
+  
+text-align: right;
+}
+
+.mat-card.job-thumbnail.mat-card{
+    display:inline-table;
+    margin-bottom:50px; 
+}
+.mat-card{
+    transition: all .2s ease-in-out; 
+ 
+ }
+ .mat-card:hover{
+   
+     transform: scale(1.1) ;  
+     
+ }
+ 
+.job-thumbnail:hover{
+    cursor: pointer;
+}
+.mat-card-header {
+    height:50px;
+    padding-bottom: 8px;
+    overflow: hidden;
+}
+.mat-card-content{
+    margin: 4% 4%;
+}
+
+.title{
+
+    font-size: 15px;
+}
