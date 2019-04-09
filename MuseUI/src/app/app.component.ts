@@ -1,18 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from './modules/authentication/services/authentication.service';
 import { LoginComponent } from './modules/authentication/components/login/login.component';
 import { JobService } from './modules/jobportal/services/job.service';
+import { count } from 'rxjs/operators';
+import { ContainerComponent } from './modules/jobportal/components/container/container.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit
+{
+ 
+  @ViewChild(ContainerComponent)
+  private containerComponent:ContainerComponent;
+
   title = 'MuseUI';
   userId:string;
   count:number;
+
+  
 
   constructor(private router:Router,private authService:AuthenticationService,private jobService:JobService){
   this.count=0;
@@ -21,6 +30,10 @@ export class AppComponent {
 
   ngOnInit(){
   
+  }
+
+  ngAfterViewInit(): void {
+    this.count = this.containerComponent.bookmarkedCount;
   }
 
   checkLoggedIn(){
@@ -35,11 +48,8 @@ export class AppComponent {
     this.router.navigate(['/login']);
   }
 
-  refreshCount(){
-
-    this.jobService.viewBookmarks().subscribe(res=>{
-      this.count=res.length;
-    });
-return true;
-  }
+updateCount(count:number){
+  alert(this.count)
+  this.count = count;
+}
 }

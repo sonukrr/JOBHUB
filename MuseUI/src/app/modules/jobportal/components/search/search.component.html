@@ -1,3 +1,5 @@
+<app-container [jobsList]="jobsList" (pageNumber)="updatePageNumber($event)" >
+</app-container> 
 
 <div class="search">
 <form class="example-form">
@@ -13,5 +15,3 @@
 </form>
 </div>
 
-<app-container [jobsList]="jobsList" (pageNumber)="updatePageNumber($event)" >
-</app-container> 

@@ -13,7 +13,7 @@ export class ContainerComponent implements OnInit {
 
 
   pageEvent:PageEvent;
- 
+  bookmarkedCount:number;
 
   @Output()
   pageNumber = new EventEmitter();
@@ -33,10 +33,14 @@ export class ContainerComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.jobService.viewBookmarks().subscribe(res => {
+      this.bookmarkedCount = res.length;
+    });
   }
 
   addToBookmark(job: Job) {
+    this.bookmarkedCount += 1;
+
     this.jobService.addToBookmark(job).subscribe((res) => {
       let message = "Job successfuly added to bookmark";
       this.snackBar.open(message, '', {
@@ -63,6 +67,9 @@ export class ContainerComponent implements OnInit {
   }
 
   deleteFromBookmark(job) {
+    
+    if(this.bookmarkedCount > 0)
+    this.bookmarkedCount -= 1;
 
     this.jobService.deleteJob(job.jobId).subscribe((res) => {
 
@@ -97,5 +104,6 @@ onWindowScroll() {
  (element[scrollTop]||body[scrollTop]) / 
  ((element[scrollHeight]||body[scrollHeight]) - element.clientHeight) * 100;
 }
+
 
 }
