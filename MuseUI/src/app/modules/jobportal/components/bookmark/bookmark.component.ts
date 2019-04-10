@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { JobService } from '../../services/job.service';
 import { Job } from '../../models/job';
 import { MatSnackBar } from '@angular/material';
+import { DataServiceService } from 'src/app/data-service.service';
 
 @Component({
   selector: 'app-bookmark',

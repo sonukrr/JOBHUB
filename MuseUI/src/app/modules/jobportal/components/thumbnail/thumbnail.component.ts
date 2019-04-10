@@ -4,6 +4,7 @@ import { JobdialogComponent } from '../jobdialog/jobdialog.component';
 import { MatDialog, MatSnackBar } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { Router, NavigationExtras } from '@angular/router';
+import { DataServiceService } from 'src/app/data-service.service';
 
 @Component({
   selector: 'app-thumbnail',
@@ -29,9 +30,10 @@ export class ThumbnailComponent implements OnInit {
   @Input()
   inBookmarks:boolean;
 
-  constructor(private snackBar: MatSnackBar, private http: HttpClientModule, private dialog: MatDialog, private route:Router) { }
+  constructor(private snackBar: MatSnackBar, private http: HttpClientModule, private dialog: MatDialog, private route:Router,private dataService:DataServiceService) { }
 
   ngOnInit() {
+    this.dataService.changeStatus(this.inBookmarks);
   }
 
   addToBookmark(){

@@ -3,6 +3,7 @@ import { Job } from '../../models/job';
 import { JobService } from '../../services/job.service';
 import { MatSnackBar, PageEvent } from '@angular/material';
 import { HttpErrorResponse } from '@angular/common/http';
+import { DataServiceService } from 'src/app/data-service.service';
 
 @Component({
   selector: 'app-container',
@@ -27,7 +28,7 @@ export class ContainerComponent implements OnInit {
 
   progresValue:number;
 
-  constructor(private jobService: JobService, private snackBar: MatSnackBar) {
+  constructor(private jobService: JobService, private snackBar: MatSnackBar,private dataService:DataServiceService) {
     this.job = new Job();
     this.progresValue =0;
   }
@@ -36,16 +37,22 @@ export class ContainerComponent implements OnInit {
     this.jobService.viewBookmarks().subscribe(res => {
       this.bookmarkedCount = res.length;
     });
+
+    this.dataService.changeCount(this.bookmarkedCount);
+    
   }
 
   addToBookmark(job: Job) {
-    this.bookmarkedCount += 1;
-
+    
     this.jobService.addToBookmark(job).subscribe((res) => {
       let message = "Job successfuly added to bookmark";
       this.snackBar.open(message, '', {
         duration: 1000
       });
+
+      this.bookmarkedCount += 1;
+    this.dataService.changeCount(this.bookmarkedCount);
+
     },(error:HttpErrorResponse)=>{
 
       if(error instanceof Error)
@@ -68,11 +75,12 @@ export class ContainerComponent implements OnInit {
 
   deleteFromBookmark(job) {
     
-    if(this.bookmarkedCount > 0)
-    this.bookmarkedCount -= 1;
-
+ 
     this.jobService.deleteJob(job.jobId).subscribe((res) => {
 
+      if(this.bookmarkedCount > 0)
+        this.bookmarkedCount -= 1;
+        this.dataService.changeCount(this.bookmarkedCount);
 
       this.jobsList.forEach((element, index) => {
         if (element.jobId == job.jobId) {
@@ -83,6 +91,8 @@ export class ContainerComponent implements OnInit {
         this.snackBar.open(message, '', {
           duration: 1000
         });
+
+        
       });
     });
   }
