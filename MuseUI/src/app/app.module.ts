@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { AuthenticationService } from './modules/authentication/services/authentication.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { LoginComponent } from './modules/authentication/components/login/login.component';
+import { ContainerComponent } from './modules/jobportal/components/container/container.component';
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import { LoginComponent } from './modules/authentication/components/login/login.
     
     
   ],
-  providers: [LoginComponent],
+  providers: [LoginComponent,ContainerComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
